@@ -35,9 +35,12 @@ const AuthHandler=()=>{
             catch (error){
                 console.log("Error on storing the user data:",error)
             }
+            finally{
+                setLoading(false)
+            }
     
         }
-    }
+    };
     storeUserData()
     },[isSignedIn,user,pathname,navigate])
 
