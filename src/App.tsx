@@ -8,6 +8,9 @@ import HomePage from "@/routes/home"
 import { SignInPage } from "./routes/sign-in"
 import { SignUpPage } from "./routes/sign-up"
 import { ProtectRoutes } from "./layouts/protected-routes"
+import { Generate } from "./components/generate"
+import { Dashboard } from "./routes/dashboard"
+import { CreateEditPage } from "./routes/create-edit-page"
 
 
 const App = () => {
@@ -27,9 +30,18 @@ const App = () => {
 
 
         {/*Protected routes*/}
-        <Route element={<ProtectRoutes><MainLayout/></ProtectRoutes>}>
+        <Route element=
+        {<ProtectRoutes>
+          <MainLayout/>
+        </ProtectRoutes>
+      }>
 
-    {/* {add all the protect routes} */}
+        {/* {add all the protect routes} */}
+        <Route path="/generate" element={<Generate />}>
+            <Route index element={<Dashboard />} /> 
+            <Route path=":interviewId" element={<CreateEditPage/>}/>
+        </Route>
+
         </Route>
       </Routes>
     </Router>

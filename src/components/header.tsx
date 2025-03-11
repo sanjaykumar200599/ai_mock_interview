@@ -6,8 +6,10 @@ import { NavigationRoutes } from "./navigation-routes"
 import { NavLink } from "react-router-dom"
 import { ProfileContainer } from "./profile-container"
 import { ToggleContainer } from "./toggle-container"
+
+
 const Header = () => {
-  const {userId}=useAuth()
+  const {userId}=useAuth();
 
   return (
     <header className={cn("w-full border-b duration-150 transition-all ease-in-out")}>

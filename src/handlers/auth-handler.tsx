@@ -1,7 +1,7 @@
 import { db } from "@/config/firebase.config";
 import { LoaderPage } from "@/routes/loader-page";
 import { User } from "@/types";
-import { SignIn, useAuth, useUser } from "@clerk/clerk-react";
+import { useAuth, useUser } from "@clerk/clerk-react";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";

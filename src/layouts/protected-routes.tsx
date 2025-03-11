@@ -9,7 +9,7 @@ export const ProtectRoutes = ({children}: {children: React.ReactNode}) => {
         return <LoaderPage/>
     }
 
-    if(isSignedIn){
+    if(!isSignedIn){
         return <Navigate to={"/signin"} replace/>
     }
   return children;
