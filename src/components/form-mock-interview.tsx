@@ -60,11 +60,11 @@ export const FormMockInterview = ({ initialData }: FormMockInterview) => {
   const navigate = useNavigate();
   const { userId } = useAuth();
 
-  const title = initialData?.position 
+  const title = initialData
     ? initialData.position
     : "Create a new mock interview";
 
-  const breadCrumpPage = initialData?.position ? initialData?.position : "Create";
+  const breadCrumpPage = initialData ? initialData?.position : "Create";
   const actions = initialData ? "Save Changes" : "Create";
   const toastMessage = initialData
     ? { title: "Updated..!", description: "Changes saved successfully..." }
@@ -245,6 +245,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterview) => {
                     disabled={isLoading}
                     placeholder="eg:- describle your job role"
                     {...field}
+                    value={field.value || ""}
                   />
                 </FormControl>
               </FormItem>
@@ -269,6 +270,7 @@ export const FormMockInterview = ({ initialData }: FormMockInterview) => {
                     disabled={isLoading}
                     placeholder="eg:- 5 Years"
                     {...field}
+                    value={field.value || ""}
                   />
                 </FormControl>
               </FormItem>
@@ -289,8 +291,9 @@ export const FormMockInterview = ({ initialData }: FormMockInterview) => {
                   <Textarea
                     className="h-12"
                     disabled={isLoading}
-                    placeholder="eg:- React, Typescript..(seperate the values using commas)"
+                    placeholder="eg:- React, Typescript..."
                     {...field}
+                    value={field.value || ""}
                   />
                 </FormControl>
               </FormItem>
